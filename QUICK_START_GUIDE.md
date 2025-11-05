@@ -34,8 +34,10 @@ Fill in three simple fields:
    - OR enter in **Pounds (lbs)**: Example: 154 lbs
    - 💡 **Tip:** If you enter the weight in one unit, it automatically converts to the other!
 
-2. **Height (cm):** Patient's height in centimeters
-   - Example: 170 cm
+2. **Height:** Patient's height (automatic conversion between units!)
+   - Enter in **Centimeters (cm)**: Example: 170 cm
+   - OR enter in **Inches (in)**: Example: 67 inches
+   - 💡 **Tip:** If you enter the height in one unit, it automatically converts to the other!
    - *OR* skip this and enter BMI if you already have it
 
 3. **Formula Type:** Choose from dropdown

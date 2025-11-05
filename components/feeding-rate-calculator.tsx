@@ -42,6 +42,7 @@ export function FeedingRateCalculator() {
   const [weight, setWeight] = useState("")
   const [weightInPounds, setWeightInPounds] = useState("")
   const [height, setHeight] = useState("")
+  const [heightInInches, setHeightInInches] = useState("")
   const [bmi, setBmi] = useState("")
   const [selectedFormula, setSelectedFormula] = useState<keyof typeof FORMULA_OPTIONS>("standard")
   const [calculation, setCalculation] = useState<FeedingCalculation | null>(null)
@@ -68,6 +69,28 @@ export function FeedingRateCalculator() {
       setWeightInPounds(lbs)
     } else {
       setWeightInPounds("")
+    }
+  }
+
+  // Convert centimeters to inches
+  const handleInchesChange = (inches: string) => {
+    setHeightInInches(inches)
+    if (inches && Number.parseFloat(inches) > 0) {
+      const cm = (Number.parseFloat(inches) * 2.54).toFixed(1)
+      setHeight(cm)
+    } else {
+      setHeight("")
+    }
+  }
+
+  // Convert centimeters to inches
+  const handleCmChange = (cm: string) => {
+    setHeight(cm)
+    if (cm && Number.parseFloat(cm) > 0) {
+      const inches = (Number.parseFloat(cm) / 2.54).toFixed(2)
+      setHeightInInches(inches)
+    } else {
+      setHeightInInches("")
     }
   }
 
@@ -212,7 +235,9 @@ export function FeedingRateCalculator() {
 
   const handleReset = () => {
     setWeight("")
+    setWeightInPounds("")
     setHeight("")
+    setHeightInInches("")
     setBmi("")
     setCalculation(null)
     setProtocol([])
@@ -317,40 +342,64 @@ export function FeedingRateCalculator() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <div className="flex items-center">
-                <label htmlFor="height" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                  Height (cm):
-                </label>
-                <InfoTooltip content="Enter height in centimeters. Leave blank if using BMI instead." />
-              </div>
-              <input
-                id="height"
-                type="number"
-                value={height}
-                onChange={(e) => setHeight(e.target.value)}
-                placeholder="e.g., 170"
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+          <div className="space-y-2">
+            <div className="flex items-center">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                Height:
+              </label>
+              <InfoTooltip content="Enter height in centimeters or inches. The values will convert automatically. Leave blank if using BMI instead." />
             </div>
+            
+            <div className="grid grid-cols-2 gap-2">
+              <div className="space-y-1">
+                <label htmlFor="height-cm" className="text-xs text-gray-600 dark:text-gray-400">
+                  Centimeters (cm)
+                </label>
+                <input
+                  id="height-cm"
+                  type="number"
+                  value={height}
+                  onChange={(e) => handleCmChange(e.target.value)}
+                  placeholder="e.g., 170"
+                  className="w-full px-3 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                />
+              </div>
+              
+              <div className="space-y-1">
+                <label htmlFor="height-inches" className="text-xs text-gray-600 dark:text-gray-400">
+                  Inches (in)
+                </label>
+                <input
+                  id="height-inches"
+                  type="number"
+                  value={heightInInches}
+                  onChange={(e) => handleInchesChange(e.target.value)}
+                  placeholder="e.g., 67"
+                  className="w-full px-3 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                />
+              </div>
+            </div>
+            
+            <p className="text-xs text-gray-500 dark:text-gray-400">
+              💡 Tip: Enter height in either unit and it will auto-convert
+            </p>
+          </div>
 
-            <div className="space-y-2">
-              <div className="flex items-center">
-                <label htmlFor="bmi" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                  BMI (optional):
-                </label>
-                <InfoTooltip content="If you already have the BMI calculated, enter it here. Otherwise, leave blank." />
-              </div>
-              <input
-                id="bmi"
-                type="number"
-                value={bmi}
-                onChange={(e) => setBmi(e.target.value)}
-                placeholder="e.g., 24.2"
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+          <div className="space-y-2">
+            <div className="flex items-center">
+              <label htmlFor="bmi" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                BMI (optional):
+              </label>
+              <InfoTooltip content="If you already have the BMI calculated, enter it here. Otherwise, leave blank." />
             </div>
+            <input
+              id="bmi"
+              type="number"
+              value={bmi}
+              onChange={(e) => setBmi(e.target.value)}
+              placeholder="e.g., 24.2"
+              className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
           </div>
 
           <div className="space-y-2">
