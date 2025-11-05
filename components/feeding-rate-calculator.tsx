@@ -20,6 +20,11 @@ interface FeedingCalculation {
   hoursToReachGoal: number
 }
 
+interface WeightConversion {
+  pounds: number
+  kilograms: number
+}
+
 interface ProtocolStep {
   step: number
   time: string
@@ -35,6 +40,7 @@ const FORMULA_OPTIONS = {
 
 export function FeedingRateCalculator() {
   const [weight, setWeight] = useState("")
+  const [weightInPounds, setWeightInPounds] = useState("")
   const [height, setHeight] = useState("")
   const [bmi, setBmi] = useState("")
   const [selectedFormula, setSelectedFormula] = useState<keyof typeof FORMULA_OPTIONS>("standard")
@@ -42,6 +48,28 @@ export function FeedingRateCalculator() {
   const [protocol, setProtocol] = useState<ProtocolStep[]>([])
   const [expandedSection, setExpandedSection] = useState<string | null>("disclaimer")
   const [activeStep, setActiveStep] = useState<number | null>(null)
+
+  // Convert pounds to kilograms
+  const handlePoundsChange = (pounds: string) => {
+    setWeightInPounds(pounds)
+    if (pounds && Number.parseFloat(pounds) > 0) {
+      const kg = (Number.parseFloat(pounds) / 2.20462).toFixed(2)
+      setWeight(kg)
+    } else {
+      setWeight("")
+    }
+  }
+
+  // Convert kilograms to pounds
+  const handleKgChange = (kg: string) => {
+    setWeight(kg)
+    if (kg && Number.parseFloat(kg) > 0) {
+      const lbs = (Number.parseFloat(kg) * 2.20462).toFixed(2)
+      setWeightInPounds(lbs)
+    } else {
+      setWeightInPounds("")
+    }
+  }
 
   const calculateBMI = (w: number, h: number): number => {
     // BMI = weight (kg) / height (m)²
@@ -248,19 +276,45 @@ export function FeedingRateCalculator() {
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <div className="flex items-center">
-              <label htmlFor="weight" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                Weight (kg):
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                Weight:
               </label>
-              <InfoTooltip content="Enter the patient's current weight in kilograms." />
+              <InfoTooltip content="Enter weight in kilograms or pounds. The values will convert automatically." />
             </div>
-            <input
-              id="weight"
-              type="number"
-              value={weight}
-              onChange={(e) => setWeight(e.target.value)}
-              placeholder="e.g., 70"
-              className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+            
+            <div className="grid grid-cols-2 gap-2">
+              <div className="space-y-1">
+                <label htmlFor="weight-kg" className="text-xs text-gray-600 dark:text-gray-400">
+                  Kilograms (kg)
+                </label>
+                <input
+                  id="weight-kg"
+                  type="number"
+                  value={weight}
+                  onChange={(e) => handleKgChange(e.target.value)}
+                  placeholder="e.g., 70"
+                  className="w-full px-3 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                />
+              </div>
+              
+              <div className="space-y-1">
+                <label htmlFor="weight-lbs" className="text-xs text-gray-600 dark:text-gray-400">
+                  Pounds (lbs)
+                </label>
+                <input
+                  id="weight-lbs"
+                  type="number"
+                  value={weightInPounds}
+                  onChange={(e) => handlePoundsChange(e.target.value)}
+                  placeholder="e.g., 154"
+                  className="w-full px-3 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                />
+              </div>
+            </div>
+            
+            <p className="text-xs text-gray-500 dark:text-gray-400">
+              💡 Tip: Enter weight in either unit and it will auto-convert
+            </p>
           </div>
 
           <div className="grid grid-cols-2 gap-4">

@@ -29,8 +29,10 @@ The red disclaimer section at the top explains:
 
 Fill in three simple fields:
 
-1. **Weight (kg):** Patient's weight in kilograms
-   - Example: 70 kg
+1. **Weight:** Patient's weight (automatic conversion between units!)
+   - Enter in **Kilograms (kg)**: Example: 70 kg
+   - OR enter in **Pounds (lbs)**: Example: 154 lbs
+   - 💡 **Tip:** If you enter the weight in one unit, it automatically converts to the other!
 
 2. **Height (cm):** Patient's height in centimeters
    - Example: 170 cm
