@@ -9,11 +9,11 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Tube Feed Tracker",
-  description: "Enterprise-grade tracker for tube feed rates with user authentication",
-  keywords: ["tube feeding", "enteral nutrition", "medical calculator", "healthcare", "nutrition tracking"],
+  description: "Enterprise-grade tracker for tube feed rates",
+  keywords: ["tube feeding", "tube feed", "tube feed rate", "tubie", "enteral nutrition", "medical calculator", "healthcare", "nutrition tracking"],
   authors: [{ name: "Roxana Rodriguez-Becker" }],
   creator: "Roxana Rodriguez-Becker",
-  publisher: "Tube Feed Tracker",
+  publisher: "RodBeck Digital",
   formatDetection: {
     email: false,
     address: false,
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Tube Feed Tracker",
-    description: "Enterprise-grade tracker for tube feed rates with user authentication",
+    description: "Enterprise-grade tracker for tube feed rates",
     url: "https://tubefeedtracker.app",
     siteName: "Tube Feed Tracker",
     images: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Tube Feed Tracker",
-    description: "Enterprise-grade tracker for tube feed rates with user authentication",
+    description: "Enterprise-grade tracker for tube feed rates",
     images: ["/apple-touch-icon.png"],
   },
   robots: {
