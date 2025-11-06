@@ -101,14 +101,20 @@ export function FormulaSearch({ onFormulaSelect, sessionId }: FormulaSearchProps
   }
 
   const popularSearches = [
+    "Compleat",
+    "Elecare",
     "Kate Farms",
+    "Peptamen",
     "plant-based",
     "diabetes",
     "high calorie",
-    "fiber-free",
+    "whole food",
     "elemental",
+    "allergies",
     "COPD",
     "kidney disease",
+    "pediatric",
+    "fiber",
   ]
 
   return (
