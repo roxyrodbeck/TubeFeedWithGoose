@@ -59,14 +59,14 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   icons: {
     icon: [
-      { url: "/apple-touch-icon.png", type: "image/png" },
+      { url: "/favicon.png", type: "image/png" },
       { url: "/icon", sizes: "512x512", type: "image/png" },
     ],
     apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
     other: [
       {
         rel: "mask-icon",
-        url: "/apple-touch-icon.png",
+        url: "/favicon.png",
         color: "#3b82f6",
       },
     ],
@@ -99,12 +99,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" type="image/png" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" href="/icon" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="icon" type="image/png" href="/icon" sizes="512x512" />
         <link rel="apple-touch-icon" href="/apple-icon" />
-        <link rel="mask-icon" href="/apple-touch-icon.png" color="#3b82f6" />
+        <link rel="mask-icon" href="/favicon.png" color="#3b82f6" />
         <meta name="msapplication-TileColor" content="#3b82f6" />
-        <meta name="msapplication-TileImage" content="/icon" />
+        <meta name="msapplication-TileImage" content="/favicon.png" />
         <meta name="application-name" content="Tube Feed Tracker" />
         <meta name="apple-mobile-web-app-title" content="TF Tracker" />
         <meta name="mobile-web-app-capable" content="yes" />
