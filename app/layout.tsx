@@ -112,7 +112,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
 
-        {/* Google Analytics */}
+         {/* Google Analytics */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-T4MT4MFPKN" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
