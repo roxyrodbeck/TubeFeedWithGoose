@@ -101,10 +101,13 @@ export function FormulaSearch({ onFormulaSelect, sessionId }: FormulaSearchProps
   }
 
   const popularSearches = [
+    "Fortisip",
+    "Fresubin Energy Fibre",
     "Compleat",
     "Elecare",
     "Kate Farms",
     "Peptamen",
+    "Ensure Plus",
     "plant-based",
     "diabetes",
     "high calorie",

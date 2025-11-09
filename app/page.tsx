@@ -18,13 +18,14 @@ export default function Home() {
   }
 
   return (
-    <div
-      className={`min-h-screen flex items-center justify-center bg-cover bg-center p-4 ${
-        isDarkMode ? "bg-[url(/images/tube-feed-dark.jpg)]" : "bg-[url(/images/tube-feed-light.jpg)]"
-      }`}
-    >
-      <div className="w-full max-w-4xl">
-        <div className="bg-white/90 dark:bg-gray-800/90 rounded-2xl shadow-xl overflow-hidden backdrop-blur-sm">
+    <div className="min-h-screen flex items-center justify-center p-4 relative">
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800" />
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-60 dark:opacity-40"
+        style={{ backgroundImage: "url(/tube-feed-background.jpg)" }}
+      />
+      <div className="w-full max-w-4xl relative z-10">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden backdrop-blur-sm">
           <div className="p-6">
             <div className="flex justify-end items-center mb-6">
               <div className="flex items-center gap-1">
