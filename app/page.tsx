@@ -22,7 +22,7 @@ export default function Home() {
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800" />
       <div
         className="absolute inset-0 bg-cover bg-center opacity-60 dark:opacity-40"
-        style={{ backgroundImage: "url(/tube-feed-background.jpg)" }}
+        style={{ backgroundImage: "url(/tube-feed-supplies-500.jpg)" }}
       />
       <div className="w-full max-w-4xl relative z-10">
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden backdrop-blur-sm">
