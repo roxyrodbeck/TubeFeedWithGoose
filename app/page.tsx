@@ -40,7 +40,10 @@ export default function Home() {
                   <span className="text-sm font-medium hidden sm:inline">About</span>
                 </Link>
                 <ThemeToggle isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
-                <UserMenu />
+                <span className="text-sm font-medium hidden sm:inline" 
+                href="https://tubefeed-message-board-main-d0vrgs.laravel.cloud/messages"
+                target="_blank">Message Board</span>
+                {/* <UserMenu /> */}
               </div>
             </div>
 

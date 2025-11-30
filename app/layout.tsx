@@ -122,6 +122,7 @@ export default function RootLayout({
             gtag('config', 'G-T4MT4MFPKN');
           `}
         </Script>
+
       </body>
     </html>
   )
