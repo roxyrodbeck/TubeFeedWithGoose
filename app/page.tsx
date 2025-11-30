@@ -50,8 +50,8 @@ export default function Home() {
                 >
                   <Info className="h-5 w-5" />
                 <span className="text-sm font-medium hidden sm:inline"> 
-                <a href="https://tubefeed-message-board-main-d0vrgs.laravel.cloud/messages"
-                target="_blank">Message Board</a></span>
+                Message Board</span>
+                </Link>
                 {/* <UserMenu /> */}
               </div>
             </div>
