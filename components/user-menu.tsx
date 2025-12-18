@@ -42,8 +42,8 @@ export function UserMenu() {
         onClick={() => setShowMenu(!showMenu)}
         className="flex items-center gap-2 px-3 py-2 rounded-full"
       >
-        <div className="bg-blue-100 dark:bg-blue-900 p-1.5 rounded-full">
-          <User className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+        <div className="bg-green-100 dark:bg-green-900 p-1.5 rounded-full">
+          <User className="h-4 w-4 text-green-600 dark:text-green-400" />
         </div>
         <span className="text-sm font-medium text-gray-700 dark:text-gray-300 hidden sm:block">
           {user.name ? getFirstName(user.name) : user.email}

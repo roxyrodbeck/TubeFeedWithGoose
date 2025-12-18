@@ -87,7 +87,7 @@ export function LogTab({ sessionId }: LogTabProps) {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-12">
-        <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-green-500"></div>
       </div>
     )
   }
@@ -132,7 +132,7 @@ export function LogTab({ sessionId }: LogTabProps) {
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <Calculator className="h-4 w-4 text-blue-600" />
+                    <Calculator className="h-4 w-4 text-green-600" />
                     <CardTitle className="text-sm">{getCalculationTypeLabel(log.calculationType)}</CardTitle>
                     <Badge variant="outline" className="text-xs">
                       Calculation

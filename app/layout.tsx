@@ -4,6 +4,14 @@ import { Inter } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -94,6 +102,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <ClerkProvider>
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" type="image/png" href="/favicon.png" />
@@ -109,8 +118,29 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <header className="flex justify-between items-center p-4">
+            {/* <h1>Tube Feed Tracker</h1> */}
+            <div className="flex gap-2">
+              <SignedOut>
+                <SignInButton mode="modal">
+                  <button className="bg-gray-200 text-gray-800 rounded-full font-medium text-sm h-10 px-4">
+                    Sign In
+                    </button>
+                </SignInButton>
+                <SignUpButton mode="modal">
+                  <button className="bg-[#18A34A] text-white rounded-full font-medium text-sm h-10 px-4">
+                      Sign Up
+                    </button>
+                </SignUpButton>
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
+            </div>
+          </header>
           {children}
         </ThemeProvider>
+  
 
          {/* Google Analytics */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-T4MT4MFPKN" strategy="afterInteractive" />
@@ -125,5 +155,6 @@ export default function RootLayout({
 
       </body>
     </html>
+    </ClerkProvider>
   )
 }
