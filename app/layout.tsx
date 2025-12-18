@@ -123,12 +123,12 @@ export default function RootLayout({
             <div className="flex gap-2">
               <SignedOut>
                 <SignInButton mode="modal">
-                  <button className="bg-gray-200 text-gray-800 rounded-full font-medium text-sm h-10 px-4">
+                  <button className="bg-gray-200 text-gray-800 rounded-md font-medium text-sm h-8 px-4">
                     Sign In
                     </button>
                 </SignInButton>
                 <SignUpButton mode="modal">
-                  <button className="bg-[#18A34A] text-white rounded-full font-medium text-sm h-10 px-4">
+                  <button className="bg-[#18A34A] text-white rounded-md font-medium text-sm h-8 px-4">
                       Sign Up
                     </button>
                 </SignUpButton>
