@@ -1,5 +1,5 @@
+"use client"
 import type React from "react"
-import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
@@ -12,89 +12,9 @@ import {
   SignedOut,
   UserButton,
 } from '@clerk/nextjs'
+import { Button } from "@/components/ui/button"
 
 const inter = Inter({ subsets: ["latin"] })
-
-export const metadata: Metadata = {
-  title: "Tube Feed Tracker",
-  description: "Enterprise-grade tracker for tube feed rates",
-  keywords: ["tube feeding", "tube feed", "tube feed rate", "tubie", "enteral nutrition", "medical calculator", "healthcare", "nutrition tracking"],
-  authors: [{ name: "Roxana Rodriguez-Becker" }],
-  creator: "Roxana Rodriguez-Becker",
-  publisher: "RodBeck Digital",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL("https://tubefeedtracker.app"),
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: "Tube Feed Tracker",
-    description: "Enterprise-grade tracker for tube feed rates",
-    url: "https://tubefeedtracker.app",
-    siteName: "Tube Feed Tracker",
-    images: [
-      {
-        url: "/apple-touch-icon.png",
-        width: 512,
-        height: 512,
-        alt: "Tube Feed Tracker - Medical feeding bag icon",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Tube Feed Tracker",
-    description: "Enterprise-grade tracker for tube feed rates",
-    images: ["/apple-touch-icon.png"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  manifest: "/manifest.json",
-  icons: {
-    icon: [{ url: "/favicon.png", type: "image/png" }],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
-    other: [
-      {
-        rel: "mask-icon",
-        url: "/favicon.png",
-        color: "#3b82f6",
-      },
-    ],
-  },
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "default",
-    title: "Tube Feed Tracker",
-  },
-    generator: 'v0.app'
-}
-
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#1f2937" },
-  ],
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 5,
-  userScalable: true,
-  viewportFit: "cover",
-}
 
 export default function RootLayout({
   children,
@@ -118,10 +38,13 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <header className="flex justify-between items-center p-4">
+          <header className="w-full">
             {/* <h1>Tube Feed Tracker</h1> */}
-            <div className="flex gap-2">
+            <div className="max-w-4xl mx-auto px-4 py-4 flex justify-end gap-2">
               <SignedOut>
+                <a href="https://buymeacoffee.com/xivv7akp0n" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-green-200 text-gray-800 rounded-md font-medium text-sm h-8 px-4">Tip Jar</Button></a>
+
                 <SignInButton mode="modal">
                   <button className="bg-gray-200 text-gray-800 rounded-md font-medium text-sm h-8 px-4">
                     Sign In
@@ -134,7 +57,7 @@ export default function RootLayout({
                 </SignUpButton>
               </SignedOut>
               <SignedIn>
-                <UserButton />
+                <UserButton showName/>
               </SignedIn>
             </div>
           </header>
