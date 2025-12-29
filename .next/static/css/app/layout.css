@@ -649,9 +649,6 @@ video {
 .mr-2 {
   margin-right: 0.5rem;
 }
-.mr-28 {
-  margin-right: 7rem;
-}
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -1168,13 +1165,13 @@ video {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .pb-2 {
   padding-bottom: 0.5rem;
@@ -1489,6 +1486,10 @@ video {
   color: hsl(var(--muted-foreground));
 }
 
+.hover\:bg-\[\#18A34A\]\/90:hover {
+  background-color: rgb(24 163 74 / 0.9);
+}
+
 .hover\:bg-accent:hover {
   background-color: hsl(var(--accent));
 }
@@ -1546,6 +1547,20 @@ video {
 
 .hover\:bg-secondary\/80:hover {
   background-color: hsl(var(--secondary) / 0.8);
+}
+
+.hover\:bg-\[\#18A34A\]\/60:hover {
+  background-color: rgb(24 163 74 / 0.6);
+}
+
+.hover\:bg-gray-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-green-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(134 239 172 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:text-accent-foreground:hover {

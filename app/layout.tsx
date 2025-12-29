@@ -42,19 +42,20 @@ export default function RootLayout({
             {/* <h1>Tube Feed Tracker</h1> */}
             <div className="max-w-4xl mx-auto px-4 py-4 flex justify-end gap-2">
               <SignedOut>
-                <a href="https://buymeacoffee.com/xivv7akp0n" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-green-200 text-gray-800 rounded-md font-medium text-sm h-8 px-4">Tip Jar</Button></a>
+                
 
                 <SignInButton mode="modal">
-                  <button className="bg-gray-200 text-gray-800 rounded-md font-medium text-sm h-8 px-4">
+                  <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-md font-medium text-sm h-8 px-4">
                     Sign In
                     </button>
                 </SignInButton>
                 <SignUpButton mode="modal">
-                  <button className="bg-[#18A34A] text-white rounded-md font-medium text-sm h-8 px-4">
+                  <button className="bg-[#18A34A] hover:bg-[#18A34A]/60 text-white rounded-md font-medium text-sm h-8 px-4">
                       Sign Up
                     </button>
                 </SignUpButton>
+                <a href="https://buymeacoffee.com/xivv7akp0n" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-green-200 hover:bg-green-300 text-gray-800 rounded-md font-medium text-sm h-8 px-4">Tip Jar</Button></a>
               </SignedOut>
               <SignedIn>
                 <UserButton showName/>
