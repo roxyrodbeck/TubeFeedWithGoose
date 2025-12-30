@@ -1486,8 +1486,8 @@ video {
   color: hsl(var(--muted-foreground));
 }
 
-.hover\:bg-\[\#18A34A\]\/90:hover {
-  background-color: rgb(24 163 74 / 0.9);
+.hover\:bg-\[\#18A34A\]\/60:hover {
+  background-color: rgb(24 163 74 / 0.6);
 }
 
 .hover\:bg-accent:hover {
@@ -1512,9 +1512,19 @@ video {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:bg-gray-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
+}
+
 .hover\:bg-gray-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-green-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(134 239 172 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:bg-green-50:hover {
@@ -1547,20 +1557,6 @@ video {
 
 .hover\:bg-secondary\/80:hover {
   background-color: hsl(var(--secondary) / 0.8);
-}
-
-.hover\:bg-\[\#18A34A\]\/60:hover {
-  background-color: rgb(24 163 74 / 0.6);
-}
-
-.hover\:bg-gray-300:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:bg-green-300:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(134 239 172 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:text-accent-foreground:hover {

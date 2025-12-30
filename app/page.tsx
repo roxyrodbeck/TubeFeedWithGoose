@@ -41,7 +41,7 @@ export default function Home() {
                 </Link>
                 <ThemeToggle isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
                 
-                <Link
+                {/* <Link
                   href="https://tubefeed-message-board-main-d0vrgs.laravel.cloud/messages"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -51,7 +51,7 @@ export default function Home() {
                   <Info className="h-5 w-5" />
                 <span className="text-sm font-medium hidden sm:inline"> 
                 Message Board</span>
-                </Link>
+                </Link> */}
                 {/* <UserMenu /> */}
               </div>
             </div>
